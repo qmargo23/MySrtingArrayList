@@ -11,9 +11,8 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_add() {
-        String expected = ITEM1;
         String actual = out.add(ITEM1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -23,9 +22,8 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_add2() {
-        String expected = ITEM1;
         String actual = out.add(INDEX1, ITEM1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -40,9 +38,8 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_set() {
-        String expected = ITEM1;
         String actual = out.set(INDEX1, ITEM1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -53,10 +50,9 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_removeItem() {
-        String expected = ITEM1;
         out.add(ITEM1);
         String actual = out.remove(ITEM1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -66,10 +62,9 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_removeIndex() {
-        String expected = ITEM1;
         out.add(INDEX1, ITEM1);
         String actual = out.remove(INDEX1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -79,9 +74,8 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_contains() {
-        String expected = ITEM1;
         String actual = out.set(INDEX1, ITEM1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -102,10 +96,9 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_get() {
-        String expected = ITEM1;
         out.add(INDEX1, ITEM1);
         String actual = out.get(INDEX1);
-        assertEquals(expected, actual);
+        assertEquals(ITEM1, actual);
     }
 
     @Test
@@ -130,9 +123,8 @@ class StringListImplTest {
 
     @Test
     void shouldReturnCorrectResult_size() {
-        int expected = 0;
         int actual = out.size();
-        assertEquals(expected, actual);
+        assertEquals(SIZE, actual);
     }
 
     @Test

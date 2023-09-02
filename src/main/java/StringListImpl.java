@@ -24,7 +24,7 @@ public class StringListImpl implements StringList {
     }
 
     private void validateSize() {
-        if (size == storage.length) {/////(size == storage.length+1)
+        if (size == storage.length) {
             throw new StorageIsFullException();
         }
     }
@@ -83,7 +83,7 @@ public class StringListImpl implements StringList {
                     index + 1,
                     storage,
                     index,
-                    storage.length-1);//size - index;
+                    storage.length-1);
         }
         size--;
         return item;
@@ -138,7 +138,7 @@ public class StringListImpl implements StringList {
     }
 
     @Override
-    public boolean equals(StringList otherList) {//////////
+    public boolean equals(StringList otherList) {
         return Arrays.equals(
                 this.toArray(),
                 otherList.toArray());
@@ -163,6 +163,6 @@ public class StringListImpl implements StringList {
     public String[] toArray() {
         return Arrays.copyOf(
                 storage,
-                size);//копируем массив без учета пустых ячеек
+                size);
     }
 }
