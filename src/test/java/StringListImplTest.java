@@ -113,19 +113,20 @@ class StringListImplTest {
         assertThrows(InvalidIndexException.class, () -> out.get(INDEX2));
     }
 
-//    @Test
-//    void testEquals() {
-//        String[] temp = new String[1];
-//        temp[0] = ITEM1;
-//
-//        out.add(ITEM1);
-//
-//        boolean expected = out.equals(StringList new );
-//        String[] actual = out.toArray();
-//
-//        assertEquals(expected, actual);
-//
-//    }
+    @Test
+    void testEquals() {
+        StringListImpl stringList1 = new StringListImpl(1);
+        StringListImpl stringList2 = new StringListImpl(1);
+        StringListImpl stringList3 = new StringListImpl(2);
+
+        stringList1.add(ITEM1);
+        stringList2.add(ITEM1);
+        stringList3.add(ITEM1);
+        stringList3.add(ITEM3);
+
+        assertTrue(stringList1.equals(stringList2));
+        assertFalse(stringList1.equals(stringList3));
+    }
 
     @Test
     void shouldReturnCorrectResult_size() {
@@ -141,16 +142,17 @@ class StringListImplTest {
         assertEquals(expected, actual);
     }
 
-//    @Test
-//    void toArray() {
-//        String[] temp1 = new String[1];
-//        temp1[0] = ITEM1;
-//        String[] expected = temp1;
-//        out.add(ITEM1);
-//
-////        String[] expected= out.toArray();
-//        String[] actual = out.toArray();
-//
-//        assertEquals(expected, actual);
-//    }
+    @Test
+    void testToArray() {
+        StringListImpl stringList = new StringListImpl(1);
+        stringList.add(ITEM1);
+
+        String[] array = stringList.toArray();
+
+        assertEquals(stringList.size(), array.length);
+
+        for(String str: array) {
+            assertTrue(stringList.contains(str));
+        }
+    }
 }
